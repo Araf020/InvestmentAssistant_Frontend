@@ -38,7 +38,7 @@ export default class Home extends Component {
         </header>
        
       </div>
-      {/* <Footer/> */}
+       {/*<Footer/>*/}
       </div>
       
       

@@ -5,6 +5,7 @@ import Footer from './Footer';
 import Top from './Top';
 import logo from './photo/logo.jpg';
 import { Dropdown,InputGroup,FormControl } from 'react-bootstrap';
+import Chartshow from "./ChartShow";
 
 function ShowChart() {
     return (
@@ -50,10 +51,11 @@ function ShowChart() {
               </InputGroup>
           </div>
        </nav>
-         
+
         </div>
-        <Body/>
-        <Footer/>
+          <Body/>
+          {/*<Chartshow/>*/}
+          <Footer/>
       </div>
      
     );

@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Style.css';
 
 
 
@@ -23,11 +24,12 @@ function Footer() {
 					<i className="fab fa-instagram "></i>
 					
 				</div>
-			</div>
+			{/*</div>*/}
 		</div>
 	</div>
 
         </div>
+		</div>
     );
 }
 
