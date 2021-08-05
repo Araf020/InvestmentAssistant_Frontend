@@ -33,12 +33,13 @@ export default class Home extends Component {
     return (
       <div>
       <div className="container">
-        <header className="container">
+        <header className="container head">
           <h3>{this.state.content}</h3>
         </header>
        
       </div>
-       {/*<Footer/>*/}
+        {/*<Footer/>*/}
+       <Footer/>
       </div>
       
       

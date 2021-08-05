@@ -5,6 +5,9 @@
 	background-color:rgb(0, 0, 0)!important   ;	
 
 }
+.head{
+	height: 400px;
+}
 .navbar-brand.text-light {
     font-size: 30px; 
 }

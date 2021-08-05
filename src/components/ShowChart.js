@@ -6,8 +6,8 @@ import Top from './Top';
 import logo from './photo/logo.jpg';
 import { Dropdown,InputGroup,FormControl } from 'react-bootstrap';
 import Chartshow from "./ChartShow";
-import ShowRatioChart from "./ShowRatioChart";
-
+// import ShowRatioChart from "./ShowRatioChart";
+import ApexChart from "./ApexChart"
 function ShowChart() {
     return (
 
@@ -54,9 +54,8 @@ function ShowChart() {
        </nav>
 
         </div>
-          <ShowRatioChart/>
-          {/*<Body/>*/}
-          {/*<Chartshow/>*/}
+          {/*<ShowRatioChart/>*/}
+        <ApexChart/>
           <Footer/>
       </div>
      
