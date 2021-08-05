@@ -1,5 +1,4 @@
-# Getting Started with Create React App
-
+# Front End of Investment Assistant Project with React Js
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
