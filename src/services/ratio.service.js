@@ -10,7 +10,7 @@ class RatioService {
     getRatios() {
         return axios.get(API_URL + 'ratios', { headers: authHeader() });
     }
-    getRatioByCodeName(){
+    getRatioByCodeName( ){
         return axios.get(API_URL + 'ratios/AAPL',{headers: authHeader()});
     }
 

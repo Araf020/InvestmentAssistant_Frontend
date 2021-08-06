@@ -17,6 +17,8 @@ class ApexChart extends Component {
     //         data: [12, 11, 14, 18, 17, 13, 13]
     //     }];
     v = {};
+    debtEquityRatio = [];
+    debtEquityRatio_Options = {};
 
     constructor(props) {
         super(props);
@@ -125,7 +127,7 @@ class ApexChart extends Component {
         const names = ["currentRatio","priceBookValueRatio","priceToBookRatio","priceToSalesRatio","priceToFreeCashFlowsRatio","priceToOperatingCashFlowsRatio","priceCashFlowRatio","priceSalesRatio","priceEarningsToGrowthRatio","quickRatio","priceEarningsRatio","cashRatio","debtRatio","debtEquityRatio","cashFlowToDebtRatio","payoutRatio","operatingCashFlowSalesRatio","freeCashFlowOperatingCashFlowRatio","cashFlowCoverageRatios","shortTermCoverageRatios","capitalExpenditureCoverageRatios","dividendpaidAndCapexCoverageRatios","dividendPayoutRatio","PE_ratio","Price_to_Sales_Ratio","POCF_ratio","PFCF_ratio","PB_ratio","PTB_ratio","Payout_Ratio"];
         const v = []
         const seriesData =[];
-        RatioService.getRatioByCodeName()
+        RatioService.getRatioByCodeName() //fetching
             .then(Response=>{
                     console.log("Response" , Response.data);
                     for(const obj of Response.data){
@@ -159,16 +161,107 @@ class ApexChart extends Component {
                         PTB_ratio.push(obj.PTB_ratio);
                         Payout_Ratio.push(obj.Payout_Ratio);
 
-                        // priceBookValueRatio,priceToBookRatio,
-                        // priceToSalesRatio,
-                        // priceToFreeCashFlowsRatio,priceToOperatingCashFlowsRatio,priceCashFlowRatio,
-                        // priceSalesRatio,currentRatio,
-                        // priceEarningsToGrowthRatio,
-                        // quickRatio,priceEarningsRatio,cashRatio,debtRatio,debtEquityRatio,cashFlowToDebtRatio,payoutRatio,operatingCashFlowSalesRatio,freeCashFlowOperatingCashFlowRatio,cashFlowCoverageRatios,shortTermCoverageRatios,capitalExpenditureCoverageRatios,dividendpaidAndCapexCoverageRatios,
-                        // dividendPayoutRatio,PE_ratio,Price_to_Sales_Ratio,POCF_ratio,PFCF_ratio,PB_ratio,
-                        // PTB_ratio,Payout_Ratio,
 
                     }
+
+                    //======================debtEquityRatio starts=====================
+
+                    this.debtEquityRatio.push({
+                        name: "DebtEquity Ratio",
+
+                        data: debtEquityRatio,
+                    });
+               this.debtEquityRatio_Options= {
+                    chart: {
+                        height: 350,
+                            type: 'bar',
+                        dropShadow: {
+                            enabled: true,
+                            color: '#000',
+                            top: 18,
+                            left: 7,
+                            blur: 10,
+                            opacity: 1.5
+                        },
+                        toolbar: {
+                            show: false
+                        }
+                    },
+                    plotOptions: {
+                        bar: {
+                            columnWidth: '20%',
+
+                            borderRadius: 10,
+                                dataLabels: {
+                                position: 'top', // top, center, bottom
+                            },
+                        }
+                    },
+                    dataLabels: {
+                        enabled: true,
+                            formatter: function (val) {
+                            return val;
+                        },
+                        offsetY: -20,
+                            style: {
+                            fontSize: '12px',
+                                colors: ["#304758"]
+                        }
+                    },
+
+                    xaxis: {
+                        categories: date,
+                            position: 'top',
+                            axisBorder: {
+                            show: false
+                        },
+                        axisTicks: {
+                            show: false
+                        },
+                        crosshairs: {
+                            fill: {
+                                type: 'gradient',
+                                    gradient: {
+                                    colorFrom: '#D8E3F0',
+                                        colorTo: '#BED1E6',
+                                        stops: [0, 100],
+                                        opacityFrom: 0.4,
+                                        opacityTo: 0.5,
+                                }
+                            }
+                        },
+                        tooltip: {
+                            enabled: true,
+                        }
+                    },
+                    yaxis: {
+                        axisBorder: {
+                            show: false
+                        },
+                        axisTicks: {
+                            show: false,
+                        },
+                        labels: {
+                            show: false,
+                                formatter: function (val) {
+                                return val;
+                            }
+                        }
+
+                    },
+                    title: {
+                        text: 'Debt Equity Ratio',
+                            floating: true,
+                            offsetY: 330,
+                            align: 'center',
+                            style: {
+                            color: '#444'
+                        }
+                    }
+
+               };
+               // ===================debtEquityRatio ends=============
+
                     const ratiolist =  [currentRatio, priceBookValueRatio , priceToBookRatio , priceToSalesRatio, priceToFreeCashFlowsRatio, priceToOperatingCashFlowsRatio, priceCashFlowRatio, priceSalesRatio, priceEarningsToGrowthRatio, quickRatio, priceEarningsRatio, cashRatio, debtRatio, debtEquityRatio, cashFlowToDebtRatio, payoutRatio, operatingCashFlowSalesRatio, freeCashFlowOperatingCashFlowRatio, cashFlowCoverageRatios, shortTermCoverageRatios, capitalExpenditureCoverageRatios, dividendpaidAndCapexCoverageRatios, dividendPayoutRatio, PE_ratio, Price_to_Sales_Ratio, POCF_ratio, PFCF_ratio, PB_ratio, PTB_ratio, Payout_Ratio];
                     const nameData = ["currentRatio",currentRatio];
                     seriesData.push(nameData);
@@ -187,7 +280,7 @@ class ApexChart extends Component {
                    for (let i = 0; i < ratiolist.length; i++){
                        dict.push({
                            name: names[i],
-                           type: 'column',
+                           // type: 'column',
                            data:ratiolist[i],
 
                        });
@@ -233,7 +326,7 @@ class ApexChart extends Component {
                         options: {
                             chart: {
                                 height: 350,
-                                type: 'column',
+                                type: 'bar',
                                 stacked: false,
                                 dropShadow: {
                                                 enabled: true,
@@ -246,6 +339,14 @@ class ApexChart extends Component {
                                             toolbar: {
                                                 show: false
                                             }
+                            },
+                            plotOptions: {
+                                bar: {
+                                    columnWidth: '90%',
+
+                                    // borderRadius: 10,
+
+                                }
                             },
                             dataLabels: {
                                 enabled: false
@@ -417,12 +518,19 @@ class ApexChart extends Component {
     render() {
         return (
 
-<div>
+<div className="container mt-3">
             <div id="chart">
-                <Chart options={this.state.options} series={this.state.series} type="line" width={1500} height={500} />
+                <ReactApexChart options={this.state.options} series={this.state.series} type="bar" width={1300} height={500} />
             </div>
             <div className=" mt-3">
-                <h3 > Note: hover you mouse to any of the ratio listed above</h3>
+                <h3 > Note: hover your mouse on any of the ratio listed above</h3>
+                <br/>
+                <br/>
+            </div>
+
+            <div id="chart">
+
+                <ReactApexChart options={this.debtEquityRatio_Options} series={this.debtEquityRatio} type="bar" width={1300} height={350} />
             </div>
 </div>
 

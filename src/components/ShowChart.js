@@ -8,6 +8,7 @@ import { Dropdown,InputGroup,FormControl } from 'react-bootstrap';
 import Chartshow from "./ChartShow";
 // import ShowRatioChart from "./ShowRatioChart";
 import ApexChart from "./ApexChart"
+import ShowGrowths from "./ShowGrowths";
 function ShowChart() {
     return (
 
@@ -15,47 +16,59 @@ function ShowChart() {
 
         <div className=" submenu bg-light ">
         <nav className="navbar navbar-expand-lg navbar-light container ">
-            <div className="container-fluid col-md-2">
-                <Dropdown>
-                    <Dropdown.Toggle variant="light" id="dropdown-basic">
-                       Dropdown Button
-                    </Dropdown.Toggle>
+           {/* <div className="container-fluid col-md-2">*/}
+           {/*     <Dropdown>*/}
+           {/*         <Dropdown.Toggle variant="light" id="dropdown-basic">*/}
+           {/*            Company Code Name*/}
+           {/*         </Dropdown.Toggle>*/}
 
-                    <Dropdown.Menu>
-                      <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
-           </div>
+           {/*         <Dropdown.Menu>*/}
+           {/*           <Dropdown.Item href="#/action-1">AAPL</Dropdown.Item>*/}
+           {/*           <Dropdown.Item href="#/action-2">INTC</Dropdown.Item>*/}
+           {/*           <Dropdown.Item href="#/action-3">MSFT</Dropdown.Item>*/}
+           {/*         </Dropdown.Menu>*/}
+           {/*     </Dropdown>*/}
+           {/*</div>*/}
+            <div className="container-fluid col-md-8 pt-3">
+                <InputGroup className="mb-3">
+                    <FormControl className=""
+                                 placeholder="Enter Company Code Name"
+                                 aria-label="search"
+                                 aria-describedby="basic-addon1"
+                    />
+                    <InputGroup.Text id="basic-addon1"><i className="fa fa-search "></i></InputGroup.Text>
+
+                </InputGroup>
+            </div>
            <div className="container-fluid col-md-2">
                 <Dropdown>
                     <Dropdown.Toggle variant="light" id="dropdown-basic">
-                       Dropdown Button
+                      Interested In
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                      <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                      <Dropdown.Item href="#/action-1">Ratios</Dropdown.Item>
+                      <Dropdown.Item href="#/action-2">Revenue</Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">Growth</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
            </div>
-          <div className="container-fluid col-md-8 pt-3">
-              <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1"><i className="fa fa-search "></i></InputGroup.Text>
-                  <FormControl className=""
-                    placeholder="Search"
-                    aria-label="search"
-                    aria-describedby="basic-addon1"
-                />
-              </InputGroup>
-          </div>
+          {/*<div className="container-fluid col-md-8 pt-3">*/}
+          {/*    <InputGroup className="mb-3">*/}
+          {/*      <InputGroup.Text id="basic-addon1"><i className="fa fa-search "></i></InputGroup.Text>*/}
+          {/*        <FormControl className=""*/}
+          {/*          placeholder="Search"*/}
+          {/*          aria-label="search"*/}
+          {/*          aria-describedby="basic-addon1"*/}
+          {/*      />*/}
+          {/*    </InputGroup>*/}
+          {/*</div>*/}
        </nav>
 
         </div>
           {/*<ShowRatioChart/>*/}
         <ApexChart/>
+          {/*<ShowGrowths/>*/}
           <Footer/>
       </div>
      
