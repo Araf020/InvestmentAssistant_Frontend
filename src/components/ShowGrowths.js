@@ -79,7 +79,7 @@ class GrowthChart extends Component {
 
                     }
                     const growthList =  [Revenue_Growth,Gross_Profit_Growth,EBIT_Growth,Operating_Income_Growth,Net_Income_Growth,EPS_Growth,EPS_Diluted_Growth,Weighted_Average_Shares_Growth,Weighted_Average_Shares_Diluted_Growth,Operating_Cash_Flow_growth,Free_Cash_Flow_growth,Receivables_growth,Inventory_Growth,Asset_Growth,Debt_Growth];
-
+                    // date.sort();
                     console.log("date",date);
                     console.log("RevenueGrowth",Revenue_Growth);
                     console.log("epsgrwoth",EPS_Growth);

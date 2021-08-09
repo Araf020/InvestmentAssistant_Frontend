@@ -163,6 +163,7 @@ class ApexChart extends Component {
 
 
                     }
+                    // date.sort();
 
                     //======================debtEquityRatio starts=====================
 

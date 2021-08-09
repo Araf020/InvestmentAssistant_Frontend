@@ -2,6 +2,8 @@ import React, { Component } from "react";
 // import Top from "./Top";
 import UserService from "../services/user.service";
 import Footer from "./Footer";
+import SectorPie from "./SectorPie";
+import TopCompanyByEps from "./TopCompanyByEPS";
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -34,7 +36,11 @@ export default class Home extends Component {
       <div>
       <div className="container">
         <header className="container head">
-          <h3>{this.state.content}</h3>
+          {/*<h3>{this.state.content}</h3>*/}
+          <SectorPie/>
+          <div className="container mt-3">
+            <TopCompanyByEps/>
+          </div>
         </header>
        
       </div>
